@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/fs-assignment-2026-2-order-processing-71739/CustomerPortal/CustomerPortal.csproj": {}
+  },
+  "projects": {
+    "/Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/fs-assignment-2026-2-order-processing-71739/CustomerPortal/CustomerPortal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/fs-assignment-2026-2-order-processing-71739/CustomerPortal/CustomerPortal.csproj",
+        "projectName": "CustomerPortal",
+        "projectPath": "/Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/fs-assignment-2026-2-order-processing-71739/CustomerPortal/CustomerPortal.csproj",
+        "packagesPath": "/Users/admin/.nuget/packages/",
+        "outputPath": "/Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/fs-assignment-2026-2-order-processing-71739/CustomerPortal/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/admin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

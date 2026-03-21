@@ -1,0 +1,82 @@
+﻿@model Order
+
+<h2>Check out now</h2>
+<p>Please enter your details, and we'll ship your goods right away!</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Checkout" method="post" id="checkout-form">
+    <h3>Ship to</h3>
+    <div class="form-group">
+        <label>Name:</label><input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Address</h3>
+    <div class="form-group">
+        <label>Line 1:</label><input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Line 2:</label><input asp-for="Line2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Line 3:</label><input asp-for="Line3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>City:</label><input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>State:</label><input asp-for="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Zip:</label><input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Country:</label><input asp-for="Country" class="form-control" />
+    </div>
+    <h3>Options</h3>
+    <div class="checkbox">
+        <label>
+            <input asp-for="GiftWrap" /> Gift wrap these items
+        </label>
+    </div>
+
+    <h3>Payment Details</h3>
+    <div class="form-group">
+        <label>Card Number:</label>
+        <input id="card-number" class="form-control" placeholder="4242 4242 4242 4242" />
+    </div>
+    <div class="form-group">
+        <label>Expiry Date:</label>
+        <input id="card-expiry" class="form-control" placeholder="MM/YY" />
+    </div>
+    <div class="form-group">
+        <label>CVC:</label>
+        <input id="card-cvc" class="form-control" placeholder="123" />
+    </div>
+    <div id="card-errors" class="text-danger"></div>
+
+    <div class="text-center mt-3">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+        <a class="btn btn-danger ms-2" asp-controller="Cart" asp-action="Index">Cancel Payment</a>
+    </div>
+</form>
+
+<script>
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+        var cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+        var errorDiv = document.getElementById('card-errors');
+
+        var declinedCards = ['4000000000000002', '4000000000009995', '4000000000000069'];
+
+        if (!cardNumber) {
+            e.preventDefault();
+            errorDiv.textContent = 'Please enter a card number.';
+            return;
+        }
+
+        if (declinedCards.includes(cardNumber)) {
+            e.preventDefault();
+            errorDiv.textContent = 'Your card was declined. Please use a different card.';
+            return;
+        }
+    });
+</script> 

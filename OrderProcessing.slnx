@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="AdminDashboard/AdminDashboard.csproj" />
+  <Project Path="CustomerPortal/CustomerPortal.csproj" />
+  <Project Path="InventoryService/InventoryService.csproj" />
+  <Project Path="OrderManagement.API/OrderManagement.API.csproj" />
+  <Project Path="OrderProcessing.Tests/OrderProcessing.Tests.csproj" />
+  <Project Path="PaymentService/PaymentService.csproj" />
+  <Project Path="Shared.Contracts/Shared.Contracts.csproj" />
+  <Project Path="ShippingService/ShippingService.csproj" />
+  <Project Path="SportsStore.Tests/SportsStore.Tests.csproj" />
+  <Project Path="SportsStore/SportsStore.csproj" />
+</Solution>

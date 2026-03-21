@@ -1,0 +1,197 @@
+2026-03-05 00:16:31.135 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 00:16:32.241 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 10:41:42.381 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 10:41:43.827 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 10:55:56.736 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 10:55:56.982 +00:00 [FTL] Application failed to start - Adeniyi Emmanuel
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Program.cs:line 35
+2026-03-05 10:56:11.462 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 10:56:11.674 +00:00 [FTL] Application failed to start - Adeniyi Emmanuel
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Program.cs:line 35
+2026-03-05 11:58:30.856 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 11:58:32.917 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 11:59:25.710 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Stripe.StripeException: Your API key is invalid, as it contains whitespace. You can double-check your API key from the Stripe Dashboard. See https://stripe.com/docs/api/authentication for details or contact support at https://support.stripe.com/email if you have any questions.
+   at Stripe.StripeConfiguration.BuildDefaultStripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 262
+   at Stripe.StripeConfiguration.get_StripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 161
+   at Stripe.Service.get_Client() in /_/src/Stripe.net/Services/_base/Service.cs:line 57
+   at Stripe.Service.get_Requestor() in /_/src/Stripe.net/Services/_base/Service.cs:line 64
+   at Stripe.Service.RequestAsync[T](BaseAddress baseAddress, HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Services/_base/Service.cs:line 100
+   at SportsStore.Infrastructure.StripePaymentService.CreatePaymentIntent(Int64 amount, String currency) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Infrastructure/StripePaymentService.cs:line 25
+   at SportsStore.Controllers.OrderController.Checkout(Order order) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Controllers/OrderController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-05 12:09:40.922 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 12:09:43.339 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 12:10:25.049 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Stripe.StripeException: Your API key is invalid, as it contains whitespace. You can double-check your API key from the Stripe Dashboard. See https://stripe.com/docs/api/authentication for details or contact support at https://support.stripe.com/email if you have any questions.
+   at Stripe.StripeConfiguration.BuildDefaultStripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 262
+   at Stripe.StripeConfiguration.get_StripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 161
+   at Stripe.Service.get_Client() in /_/src/Stripe.net/Services/_base/Service.cs:line 57
+   at Stripe.Service.get_Requestor() in /_/src/Stripe.net/Services/_base/Service.cs:line 64
+   at Stripe.Service.RequestAsync[T](BaseAddress baseAddress, HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Services/_base/Service.cs:line 100
+   at SportsStore.Infrastructure.StripePaymentService.CreatePaymentIntent(Int64 amount, String currency) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Infrastructure/StripePaymentService.cs:line 25
+   at SportsStore.Controllers.OrderController.Checkout(Order order) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Controllers/OrderController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-05 12:20:17.067 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 12:20:18.045 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 12:21:28.439 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Stripe.StripeException: Your API key is invalid, as it contains whitespace. You can double-check your API key from the Stripe Dashboard. See https://stripe.com/docs/api/authentication for details or contact support at https://support.stripe.com/email if you have any questions.
+   at Stripe.StripeConfiguration.BuildDefaultStripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 262
+   at Stripe.StripeConfiguration.get_StripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 161
+   at Stripe.Service.get_Client() in /_/src/Stripe.net/Services/_base/Service.cs:line 57
+   at Stripe.Service.get_Requestor() in /_/src/Stripe.net/Services/_base/Service.cs:line 64
+   at Stripe.Service.RequestAsync[T](BaseAddress baseAddress, HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Services/_base/Service.cs:line 100
+   at SportsStore.Infrastructure.StripePaymentService.CreatePaymentIntent(Int64 amount, String currency) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Infrastructure/StripePaymentService.cs:line 25
+   at SportsStore.Controllers.OrderController.Checkout(Order order) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Controllers/OrderController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-05 12:22:38.374 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Stripe.StripeException: Your API key is invalid, as it contains whitespace. You can double-check your API key from the Stripe Dashboard. See https://stripe.com/docs/api/authentication for details or contact support at https://support.stripe.com/email if you have any questions.
+   at Stripe.StripeConfiguration.BuildDefaultStripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 262
+   at Stripe.StripeConfiguration.get_StripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 161
+   at Stripe.Service.get_Client() in /_/src/Stripe.net/Services/_base/Service.cs:line 57
+   at Stripe.Service.get_Requestor() in /_/src/Stripe.net/Services/_base/Service.cs:line 64
+   at Stripe.Service.RequestAsync[T](BaseAddress baseAddress, HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Services/_base/Service.cs:line 100
+   at SportsStore.Infrastructure.StripePaymentService.CreatePaymentIntent(Int64 amount, String currency) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Infrastructure/StripePaymentService.cs:line 25
+   at SportsStore.Controllers.OrderController.Checkout(Order order) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Controllers/OrderController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-05 12:23:33.217 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Stripe.StripeException: Your API key is invalid, as it contains whitespace. You can double-check your API key from the Stripe Dashboard. See https://stripe.com/docs/api/authentication for details or contact support at https://support.stripe.com/email if you have any questions.
+   at Stripe.StripeConfiguration.BuildDefaultStripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 262
+   at Stripe.StripeConfiguration.get_StripeClient() in /_/src/Stripe.net/Infrastructure/Public/StripeConfiguration.cs:line 161
+   at Stripe.Service.get_Client() in /_/src/Stripe.net/Services/_base/Service.cs:line 57
+   at Stripe.Service.get_Requestor() in /_/src/Stripe.net/Services/_base/Service.cs:line 64
+   at Stripe.Service.RequestAsync[T](BaseAddress baseAddress, HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Services/_base/Service.cs:line 100
+   at SportsStore.Infrastructure.StripePaymentService.CreatePaymentIntent(Int64 amount, String currency) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Infrastructure/StripePaymentService.cs:line 25
+   at SportsStore.Controllers.OrderController.Checkout(Order order) in /Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/SportsStore/Controllers/OrderController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-05 12:29:41.421 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 12:29:42.395 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 12:43:07.137 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 12:43:08.945 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 12:43:38.505 +00:00 [INF] Creating Stripe PaymentIntent for amount 27500 - Adeniyi Emmanuel
+2026-03-05 12:43:39.459 +00:00 [INF] PaymentIntent created: pi_3T7bFfLpVV4NTWx608y28Lxy Status: requires_payment_method - Adeniyi Emmanuel
+2026-03-05 12:43:39.741 +00:00 [INF] Order 2 saved for emmaniel - Adeniyi Emmanuel
+2026-03-05 12:45:17.701 +00:00 [INF] Creating Stripe PaymentIntent for amount 27500 - Adeniyi Emmanuel
+2026-03-05 12:45:18.897 +00:00 [INF] PaymentIntent created: pi_3T7bHGLpVV4NTWx60SWODLre Status: requires_payment_method - Adeniyi Emmanuel
+2026-03-05 12:45:18.919 +00:00 [INF] Order 3 saved for eeoe - Adeniyi Emmanuel
+2026-03-05 12:46:35.090 +00:00 [INF] Creating Stripe PaymentIntent for amount 27500 - Adeniyi Emmanuel
+2026-03-05 12:46:35.688 +00:00 [INF] PaymentIntent created: pi_3T7bIVLpVV4NTWx62C2d5SGj Status: requires_payment_method - Adeniyi Emmanuel
+2026-03-05 12:46:35.697 +00:00 [INF] Order 4 saved for did - Adeniyi Emmanuel
+2026-03-05 12:51:57.790 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 12:51:58.795 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 12:53:14.297 +00:00 [INF] Creating Stripe PaymentIntent for amount 27500 - Adeniyi Emmanuel
+2026-03-05 12:53:15.120 +00:00 [INF] PaymentIntent created: pi_3T7bOwLpVV4NTWx61JWdy0NV Status: requires_payment_method - Adeniyi Emmanuel
+2026-03-05 12:53:15.253 +00:00 [INF] Order 5 saved for dwop - Adeniyi Emmanuel
+2026-03-05 13:02:28.539 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 13:02:29.897 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 13:03:33.445 +00:00 [INF] Creating Stripe PaymentIntent for amount 27500 - Adeniyi Emmanuel
+2026-03-05 13:03:34.500 +00:00 [INF] PaymentIntent created: pi_3T7bYwLpVV4NTWx61Z1eSIVa Status: requires_payment_method - Adeniyi Emmanuel
+2026-03-05 13:03:34.792 +00:00 [INF] Order 6 saved for eke - Adeniyi Emmanuel
+2026-03-05 18:54:52.334 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 18:54:54.006 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-05 18:58:42.922 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-05 18:58:44.688 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel

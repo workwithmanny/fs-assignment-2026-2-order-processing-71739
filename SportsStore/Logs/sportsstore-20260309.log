@@ -1,0 +1,7 @@
+2026-03-09 16:13:23.103 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-09 16:13:24.845 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
+2026-03-09 16:28:41.933 +00:00 [INF] Creating Stripe PaymentIntent for amount 27500 - Adeniyi Emmanuel
+2026-03-09 16:28:43.012 +00:00 [INF] PaymentIntent created: pi_3T96feLpVV4NTWx62gPx3cvN Status: requires_payment_method - Adeniyi Emmanuel
+2026-03-09 16:28:43.312 +00:00 [INF] Order 7 saved for dudj - Adeniyi Emmanuel
+2026-03-09 16:44:21.960 +00:00 [INF] Starting SportsStore application - Adeniyi Emmanuel
+2026-03-09 16:44:23.938 +00:00 [INF] SportsStore application configured and running - Adeniyi Emmanuel
