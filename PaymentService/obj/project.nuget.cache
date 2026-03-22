@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ggoLmf1z5D8=",
+  "dgSpecHash": "Q81dNaPgs+0=",
   "success": true,
   "projectFilePath": "/Users/admin/Downloads/fullstack year 3/fs-lab-assignment-sportstore-202602-master/11 - SportsStore - 5/Beginning of Chapter/SportsSln/fs-assignment-2026-2-order-processing-71739/PaymentService/PaymentService.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,14 @@
     "/Users/admin/.nuget/packages/microsoft.extensions.options/10.0.2/microsoft.extensions.options.10.0.2.nupkg.sha512",
     "/Users/admin/.nuget/packages/microsoft.extensions.options.configurationextensions/10.0.2/microsoft.extensions.options.configurationextensions.10.0.2.nupkg.sha512",
     "/Users/admin/.nuget/packages/microsoft.extensions.primitives/10.0.2/microsoft.extensions.primitives.10.0.2.nupkg.sha512",
-    "/Users/admin/.nuget/packages/system.diagnostics.eventlog/10.0.2/system.diagnostics.eventlog.10.0.2.nupkg.sha512"
+    "/Users/admin/.nuget/packages/rabbitmq.client/7.2.1/rabbitmq.client.7.2.1.nupkg.sha512",
+    "/Users/admin/.nuget/packages/serilog/4.3.0/serilog.4.3.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/serilog.extensions.hosting/10.0.0/serilog.extensions.hosting.10.0.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/serilog.extensions.logging/10.0.0/serilog.extensions.logging.10.0.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/serilog.sinks.console/6.1.1/serilog.sinks.console.6.1.1.nupkg.sha512",
+    "/Users/admin/.nuget/packages/serilog.sinks.file/7.0.0/serilog.sinks.file.7.0.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/system.diagnostics.eventlog/10.0.2/system.diagnostics.eventlog.10.0.2.nupkg.sha512",
+    "/Users/admin/.nuget/packages/system.threading.ratelimiting/8.0.0/system.threading.ratelimiting.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
