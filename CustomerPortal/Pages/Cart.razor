@@ -1,0 +1,51 @@
+@page "/cart"
+@inject CustomerPortal.Data.CartService CartService
+@inject NavigationManager Navigation
+
+<h3>Shopping Cart</h3>
+
+@if (!CartService.Items.Any())
+{
+    <p>Your cart is empty. <a href="/products">Browse products</a></p>
+}
+else
+{
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in CartService.Items)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>€@item.UnitPrice</td>
+                <td>€@(item.UnitPrice * item.Quantity)</td>
+                <td><button @onclick="() => RemoveItem(item.ProductId)">Remove</button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <h4>Total: €@CartService.Total</h4>
+    <button @onclick="Checkout">Proceed to Checkout</button>
+}
+
+@code {
+    private void RemoveItem(int productId)
+    {
+        CartService.RemoveItem(productId);
+    }
+
+    private void Checkout()
+    {
+        Navigation.NavigateTo("/checkout");
+    }
+}
