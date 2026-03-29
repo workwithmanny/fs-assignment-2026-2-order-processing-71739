@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="compose.yaml" />
+  </Folder>
   <Project Path="AdminDashboard/AdminDashboard.csproj" />
   <Project Path="CustomerPortal/CustomerPortal.csproj" />
   <Project Path="InventoryService/InventoryService.csproj" />
