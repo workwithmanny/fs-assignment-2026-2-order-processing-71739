@@ -1,0 +1,55 @@
+@page "/order-tracking/{OrderId:guid}"
+@inject CustomerPortal.Data.OrderApiService ApiService
+@implements IDisposable
+
+<h3>Order Tracking</h3>
+
+@if (_order == null)
+{
+    <p>Loading order...</p>
+}
+else
+{
+    <p>Order ID: <strong>@_order.Id</strong></p>
+    <p>Status: <strong>@_order.Status</strong></p>
+    <p>Total: <strong>€@_order.TotalAmount</strong></p>
+
+    <h4>Items</h4>
+    @foreach (var item in _order.Items)
+    {
+        <p>@item.ProductName x@item.Quantity — €@(item.UnitPrice * item.Quantity)</p>
+    }
+
+    <p><small>Last updated: @_lastUpdated.ToLongTimeString()</small></p>
+    <p><a href="/orders">Back to My Orders</a></p>
+}
+
+@code {
+    [Parameter]
+    public Guid OrderId { get; set; }
+
+    private CustomerPortal.Data.OrderDto? _order;
+    private DateTime _lastUpdated = DateTime.Now;
+    private Timer? _timer;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadOrder();
+        _timer = new Timer(async _ =>
+        {
+            await LoadOrder();
+            await InvokeAsync(StateHasChanged);
+        }, null, 5000, 5000);
+    }
+
+    private async Task LoadOrder()
+    {
+        _order = await ApiService.GetOrderAsync(OrderId);
+        _lastUpdated = DateTime.Now;
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+    }
+}

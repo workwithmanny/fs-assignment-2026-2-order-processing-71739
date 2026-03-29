@@ -1,0 +1,25 @@
+@page "/order-confirmation/{OrderId:guid}"
+@inject CustomerPortal.Data.OrderApiService ApiService
+
+<h3>Order Confirmed!</h3>
+
+<p>Thank you for your order.</p>
+<p>Your order ID is: <strong>@OrderId</strong></p>
+<p>Current status: <strong>@_status</strong></p>
+
+<p><a href="/orders">View all my orders</a></p>
+<p><a href="/products">Continue shopping</a></p>
+
+@code {
+    [Parameter]
+    public Guid OrderId { get; set; }
+
+    private string _status = "Submitted";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var order = await ApiService.GetOrderAsync(OrderId);
+        if (order != null)
+            _status = order.Status;
+    }
+}
