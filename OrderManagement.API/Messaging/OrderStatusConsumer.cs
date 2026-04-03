@@ -30,32 +30,49 @@ public class OrderStatusConsumer : BackgroundService
     }
 
     public override async Task StartAsync(CancellationToken cancellationToken)
+{
+    var retries = 0;
+    const int maxRetries = 10;
+
+    while (retries < maxRetries)
     {
-        var factory = new ConnectionFactory
+        try
         {
-            HostName = _configuration["RabbitMQ:Host"] ?? "localhost",
-            Port = int.Parse(_configuration["RabbitMQ:Port"] ?? "5672"),
-            UserName = _configuration["RabbitMQ:Username"] ?? "guest",
-            Password = _configuration["RabbitMQ:Password"] ?? "guest"
-        };
+            var factory = new ConnectionFactory
+            {
+                HostName = _configuration["RabbitMQ:Host"] ?? "localhost",
+                Port = int.Parse(_configuration["RabbitMQ:Port"] ?? "5672"),
+                UserName = _configuration["RabbitMQ:Username"] ?? "guest",
+                Password = _configuration["RabbitMQ:Password"] ?? "guest"
+            };
 
-        _connection = await factory.CreateConnectionAsync(cancellationToken);
-        _channel = await _connection.CreateChannelAsync(cancellationToken: cancellationToken);
+            _connection = await factory.CreateConnectionAsync(cancellationToken);
+            _channel = await _connection.CreateChannelAsync(cancellationToken: cancellationToken);
 
-        await _channel.ExchangeDeclareAsync(ExchangeName, ExchangeType.Topic, durable: true, cancellationToken: cancellationToken);
-        await _channel.QueueDeclareAsync(QueueName, durable: true, exclusive: false, autoDelete: false, cancellationToken: cancellationToken);
+            await _channel.ExchangeDeclareAsync(ExchangeName, ExchangeType.Topic, durable: true, cancellationToken: cancellationToken);
+            await _channel.QueueDeclareAsync(QueueName, durable: true, exclusive: false, autoDelete: false, cancellationToken: cancellationToken);
 
-        await _channel.QueueBindAsync(QueueName, ExchangeName, "inventory.confirmed", cancellationToken: cancellationToken);
-        await _channel.QueueBindAsync(QueueName, ExchangeName, "inventory.failed", cancellationToken: cancellationToken);
-        await _channel.QueueBindAsync(QueueName, ExchangeName, "payment.approved", cancellationToken: cancellationToken);
-        await _channel.QueueBindAsync(QueueName, ExchangeName, "payment.rejected", cancellationToken: cancellationToken);
-        await _channel.QueueBindAsync(QueueName, ExchangeName, "shipping.created", cancellationToken: cancellationToken);
-        await _channel.QueueBindAsync(QueueName, ExchangeName, "shipping.failed", cancellationToken: cancellationToken);
+            await _channel.QueueBindAsync(QueueName, ExchangeName, "inventory.confirmed", cancellationToken: cancellationToken);
+            await _channel.QueueBindAsync(QueueName, ExchangeName, "inventory.failed", cancellationToken: cancellationToken);
+            await _channel.QueueBindAsync(QueueName, ExchangeName, "payment.approved", cancellationToken: cancellationToken);
+            await _channel.QueueBindAsync(QueueName, ExchangeName, "payment.rejected", cancellationToken: cancellationToken);
+            await _channel.QueueBindAsync(QueueName, ExchangeName, "shipping.created", cancellationToken: cancellationToken);
+            await _channel.QueueBindAsync(QueueName, ExchangeName, "shipping.failed", cancellationToken: cancellationToken);
 
-        _logger.LogInformation("OrderStatusConsumer connected to RabbitMQ and listening on {Queue}", QueueName);
-
-        await base.StartAsync(cancellationToken);
+            _logger.LogInformation("OrderStatusConsumer connected to RabbitMQ and listening on {Queue}", QueueName);
+            break;
+        }
+        catch (Exception ex)
+        {
+            retries++;
+            _logger.LogWarning("OrderStatusConsumer failed to connect to RabbitMQ (attempt {Retry}/{Max}): {Message}", retries, maxRetries, ex.Message);
+            if (retries >= maxRetries) throw;
+            await Task.Delay(5000, cancellationToken);
+        }
     }
+
+    await base.StartAsync(cancellationToken);
+}
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
