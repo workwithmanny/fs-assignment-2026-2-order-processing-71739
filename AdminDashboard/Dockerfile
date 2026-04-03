@@ -21,4 +21,5 @@ RUN dotnet publish "./AdminDashboard.csproj" -c Release -o /app/publish /p:UseAp
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
+COPY --from=node-build /app/build ./wwwroot
 ENTRYPOINT ["dotnet", "AdminDashboard.dll"]
