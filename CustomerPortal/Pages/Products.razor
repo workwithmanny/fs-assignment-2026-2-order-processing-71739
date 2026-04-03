@@ -1,0 +1,53 @@
+@page "/products"
+@inject CustomerPortal.Data.OrderApiService ApiService
+@inject CustomerPortal.Data.CartService CartService
+
+<h3>Products</h3>
+
+@if (_loading)
+{
+    <p>Loading products...</p>
+}
+else if (_products.Count == 0)
+{
+    <p>No products available.</p>
+}
+else
+{
+    <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        @foreach (var product in _products)
+        {
+            <div style="border: 1px solid #ccc; padding: 16px; width: 200px; border-radius: 8px;">
+                <h4>@product.Name</h4>
+                <p>@product.Description</p>
+                <p><strong>€@product.Price</strong></p>
+                <p><em>@product.Category</em></p>
+                <button @onclick="() => AddToCart(product)">Add to Cart</button>
+            </div>
+        }
+    </div>
+}
+
+@if (_addedMessage != null)
+{
+    <p style="color: green;">@_addedMessage</p>
+}
+
+@code {
+    private List<CustomerPortal.Data.ProductDto> _products = new();
+    private bool _loading = true;
+    private string? _addedMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _products = await ApiService.GetProductsAsync();
+        _loading = false;
+    }
+
+    private void AddToCart(CustomerPortal.Data.ProductDto product)
+    {
+        CartService.AddItem(product);
+        _addedMessage = $"{product.Name} added to cart!";
+        StateHasChanged();
+    }
+}
